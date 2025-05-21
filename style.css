@@ -1,0 +1,139 @@
+body{
+    background-color:  
+white;
+}
+
+
+.intro{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 20px;
+    background-color:  whitesmoke;
+}
+p{
+    font-size: 20px;
+    color: rgb(18, 17, 17);
+}
+h1{
+    font-size: 40px;
+    color: brown;
+    text-transform: uppercase;
+}
+span{
+    font-size: 40px;
+    color: black;
+}
+.button1{
+    background-color: aqua;
+    border: none;
+    border-radius: 20%;
+    margin: 10px;
+    margin-left: 0px;
+    padding: 10px;
+    font-size: 20px;
+}
+.button2{
+    background-color: aqua;
+    border: none;
+    border-radius: 20%;
+     margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+}
+.nav{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    background-color: #c9edf3;
+    padding: 10px;
+}
+.nav>button{
+    background-color: whitesmoke;
+    border-radius: 10%;
+    border: none;
+    padding: 5px;
+    font-weight: bold;
+    transition: all 0.4s ease-in-out;
+   
+}
+.nav>button:hover{
+    background-color: orangered;
+    color: white;
+    transform: scale(1.1);
+}
+.hello{
+    background-color: white;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    
+    
+}
+.gif{
+   
+    border-radius: 10%;
+    margin-left: 50px;
+    
+}
+.hello1{
+    margin-left: 150px;
+    margin-top: 150px;
+}
+.rajan{
+    margin-left: 40px;
+    margin-top: 50px;
+    height: 500px;
+    width: 500px;
+    border-radius: 10%;
+}
+.intro1{
+    margin-top: 120px;
+    margin-left: 150px;
+}
+.container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 30px;
+    margin-top: 100px;
+    margin-right: 50px;
+    background-color: #c9edf3;
+}
+
+.krishi{
+    height: 300px;
+    width: 500px;
+    
+}
+.work{
+    background-color: #c9edf3;
+}
+.name{
+    font-size: 30px;
+    color: black;
+    text-transform: uppercase;
+    margin-right: 1000px;
+
+}
+h2{
+    color: orangered;
+    list-style: none;
+}
+
+
+.krishi{
+    transition: 0.4s all ease-in-out;
+}
+
+    .krishi:hover{
+    background-color: orangered;
+    border-radius: 50px;
+    transform: rotate(10deg);
+}
+.rajan{
+    transition: 0.4s all ease-in-out;
+}
+
+    .rajan:hover{
+    border-radius: 50px;
+    transform: scale(1.4);
+}
