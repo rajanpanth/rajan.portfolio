@@ -1,96 +1,135 @@
-body{
-    background-color:  
-white;
+body {
+    background-color:
+        white;
 }
 
+* {
+    padding: 0;
+    margin: 0;
+}
 
-.intro{
+.intro {
     display: grid;
     grid-template-columns: 50% 50%;
     gap: 20px;
-    background-color:  whitesmoke;
+    background-color: whitesmoke;
 }
-p{
+
+p {
     font-size: 20px;
     color: rgb(18, 17, 17);
 }
-h1{
+
+h1 {
     font-size: 40px;
     color: brown;
     text-transform: uppercase;
 }
-span{
+
+span {
     font-size: 40px;
     color: black;
 }
-.button1{
+
+.button1 {
     background-color: aqua;
     border: none;
-    border-radius: 20%;
-    margin: 10px;
-    margin-left: 0px;
+    border-radius: 10%;
     padding: 10px;
     font-size: 20px;
 }
-.button2{
+
+.button2 {
     background-color: aqua;
     border: none;
-    border-radius: 20%;
-     margin: 10px;
+    border-radius: 10%;
     padding: 10px;
     font-size: 20px;
 }
-.nav{
-    display: flex;
-    justify-content: center;
+
+.button3 {
+
+    background-color: aqua;
+    border: none;
+    border-radius: 10%;
+    padding: 10px;
+    font-size: 20px;
+    margin-left: 700px;
+    margin-bottom: 200px;
+    margin-top: 210px;
+
+}
+
+.nav {
+    display: grid;
+    grid-template-columns: 700px 100px 100px 100px 100px 100px 100px;
     gap: 30px;
     background-color: #c9edf3;
-    padding: 10px;
+    height: 80px;
+    width: 100%;
 }
-.nav>button{
+
+.name {
+    display: flex;
+    margin-top: 15px;
+    margin-left: 50px;
+}
+
+.nav>button {
     background-color: whitesmoke;
     border-radius: 10%;
     border: none;
     padding: 5px;
     font-weight: bold;
     transition: all 0.4s ease-in-out;
-   
+    height: 50px;
+    width: 100px;
+    margin-top: 15px;
+
 }
-.nav>button:hover{
+
+.nav>button:hover {
     background-color: orangered;
     color: white;
     transform: scale(1.1);
 }
-.hello{
+
+.hello {
     background-color: white;
-    margin-top: 50px;
     display: grid;
-    grid-template-columns: 50% 50%;
-    
-    
+    grid-template-rows: 300px 50px 50px;
+    gap: 20px;
+    margin-top: 40px;
+    height: 100%;
+
+
 }
-.gif{
-   
-    border-radius: 10%;
-    margin-left: 50px;
-    
-}
-.hello1{
+
+.hello>a {
     margin-left: 150px;
-    margin-top: 150px;
+
 }
-.rajan{
+
+
+.hello1 {
+    margin-left: 150px;
+    margin-top: 100px;
+}
+
+.rajan {
     margin-left: 40px;
     margin-top: 50px;
     height: 500px;
     width: 500px;
     border-radius: 10%;
 }
-.intro1{
+
+.intro1 {
     margin-top: 120px;
     margin-left: 150px;
 }
-.container{
+
+.container {
     display: grid;
     grid-template-columns: 50% 50%;
     gap: 30px;
@@ -99,41 +138,154 @@ span{
     background-color: #c9edf3;
 }
 
-.krishi{
+.krishi {
     height: 300px;
     width: 500px;
-    
+
 }
-.work{
+
+.work {
     background-color: #c9edf3;
 }
-.name{
+
+.work>h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: orangered;
+    margin-top: 100px;
+}
+
+.name {
     font-size: 30px;
     color: black;
     text-transform: uppercase;
     margin-right: 1000px;
 
 }
-h2{
+
+h2 {
     color: orangered;
     list-style: none;
 }
 
 
-.krishi{
+.krishi {
     transition: 0.4s all ease-in-out;
 }
 
-    .krishi:hover{
+.krishi:hover {
     background-color: orangered;
     border-radius: 50px;
     transform: rotate(10deg);
 }
-.rajan{
+
+.rajan {
     transition: 0.4s all ease-in-out;
 }
 
-    .rajan:hover{
+.rajan:hover {
     border-radius: 50px;
     transform: scale(1.4);
+}
+
+
+
+.container2 {
+    display: grid;
+    grid-template-columns: 25% 25% 25%;
+    gap: 80px;
+    height: 100hv;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container2>div {
+    background-color: #33808e;
+    height: 500px;
+    border-radius: 10%;
+    margin-top: 50px;
+}
+
+.exp>h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: orangered;
+    margin-top: 50px;
+}
+
+.edu {
+    margin-top: 150px;
+}
+
+.container3 {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 100px;
+  
+
+    justify-content: center;
+    align-items: center;
+}
+
+.container3>div {
+    background-color: #33808e;
+    height: 700px;
+    width: 400px;
+    border-radius: 10px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.edu>h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: orangered;
+    margin-top: 50px;
+}
+
+.container3>.edu2 {
+    background-color: white;
+}
+
+.container3>.edu3 {
+    background-color: white;
+}
+
+.container3>.edu6 {
+    background-color: white;
+}
+
+.container4 {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+    margin-top: 100px;
+
+}
+.container4>div{
+    background-color: #33808e;
+    text-align: center;
+    height: 100px;
+    width: 200px;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.skills>h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: orangered;
+    margin-top: 100px;
 }
