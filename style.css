@@ -1,8 +1,9 @@
 /* particles ko lagi ho style haru: complex xa */
-body {
+/* body {
     margin: 0;
     font: normal 75% Arial, Helvetica, sans-serif;
-}
+    background-color: rgb(23, 3, 40);
+} */
 
 canvas {
     display: block;
@@ -11,12 +12,13 @@ canvas {
 #particles-js {
     position: absolute;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: rgb(23, 3, 40);
     background-image: url("");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
+
 }
 
 .count-particles {
@@ -176,7 +178,7 @@ span {
 
 .nav>button {
     background-color: transparent;
-    color: white;
+    color: gray;
     border-radius: 10%;
     border: none;
     font-size: 15px;
@@ -193,9 +195,13 @@ span {
 }
 
 .nav>button:hover {
-    background-color: orangered;
+    background-color: transparent;
     color: white;
     transform: scale(1.1);
+    text-decoration: underline;
+    text-decoration-color: #cfaede;
+
+
 }
 
 .background {
@@ -222,7 +228,7 @@ span {
 
 .hello>a>button {
     margin-left: 150px;
-    background-color: rgb(82, 3, 106);
+    background-color: rgb(3, 3, 181);
     border: none;
     border-radius: 10%;
     padding: 10px;
@@ -249,7 +255,7 @@ span {
 
 .jod {
     font-size: 50px;
-    text-shadow: 0 0 10px blue, 0 0 40px blue, 0 0 80px blue;
+    text-shadow: 0 0 10px rgb(63, 63, 142), 0 0 40px rgb(90, 90, 215), 0 0 80px rgb(109, 109, 240);
 }
 
 .sp {
@@ -372,7 +378,7 @@ text-decoration-color:  #AB11F2;
 }
 
 h2 {
-    color: orangered;
+    color: #3c0556;
     list-style: none;
 }
 
@@ -405,6 +411,12 @@ h2 {
     margin-top: -10px;
 }
 
+/* .Box>img{
+    filter: blur(2px);
+}
+.Box>img:hover {
+    filter: blur(0px);
+} */
 .exp>h1 {
     display: flex;
     justify-content: center;
@@ -420,6 +432,12 @@ h2 {
  text-shadow: 0 0 10px rgba(171, 17, 242, 0.5);
  text-decoration: underline;
 text-decoration-color:  #AB11F2;
+}
+
+.pov{
+    color: gold;
+    font-size: 15px;
+    text-align: center;
 }
 
 .edu {
@@ -573,6 +591,7 @@ text-decoration-color:  #AB11F2;
 
 .card:hover .Box {
     transform: rotateY(-135deg);
+    filter: blur(2px);
 }
 
 .card .details {
@@ -583,6 +602,7 @@ text-decoration-color:  #AB11F2;
     padding: 20px;
     z-index: -1;
 }
+
 
 .tiltcard {
     width: 400px;
@@ -597,19 +617,24 @@ text-decoration-color:  #AB11F2;
 
 .awards {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
     gap: 20px;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
     margin-top: 300px;
      background-color: rgb(23, 3, 40);
-}
+     justify-self: center;
+    align-items: center;
+    justify-content: center;
 
-.tiltcard1 {
-    width: 300px;
-    height: 300px;
+    
+}
+.tiltcard1>img {
+    width: 200px;
+    height:100px;
+}
+.cert>.tiltcard1 {
+    width: 400px;
+    height: 200px;
     background: transparent;
     margin: 0 20px;
     border-radius: 10px;
@@ -645,7 +670,10 @@ text-decoration-color:  #AB11F2;
     box-shadow: 0 0 5px white, 0 0 2px white, 0 0 1px white;
 
 }
-
+.tiltcard1{
+    width: 420px;
+    height: 250px;
+}
 .skills1 {
     height: 100%;
     background-color: rgb(23, 3, 40);
@@ -674,7 +702,7 @@ text-decoration-color:  #AB11F2;
 
 }
 
-.tiltcard1>h1 {
+.h1 {
     color: gray;
     font-size: 30px;
     text-align: center;

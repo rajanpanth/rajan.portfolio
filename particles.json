@@ -54,7 +54,7 @@
     },
     "move": {
       "enable": true,
-      "speed": 6,
+      "speed": 2,
       "direction": "none",
       "random": false,
       "straight": false,
@@ -72,6 +72,7 @@
       "onhover": {
         "enable": true,
         "mode": "grab"
+
       },
       "onclick": {
         "enable": true,
@@ -110,6 +111,7 @@
     "background_image": "",
     "background_position": "50% 50%",
     "background_repeat": "no-repeat",
-    "background_size": "cover"
+    "background_size": "cover",
+    "height": "100vh"
   }
 }
