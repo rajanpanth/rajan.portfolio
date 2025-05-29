@@ -628,23 +628,37 @@ text-decoration-color:  #AB11F2;
 
     
 }
-.tiltcard1>img {
-    width: 200px;
-    height:100px;
+.cert>.tiltcard1>p {
+    font-size: 20px;
+    margin-top: 30px;
+    color: gray;
+    
+}
+.cert>.tiltcard1>h1 {
+    color: rgb(12, 8, 244);
+    font-size: 30px;
+    margin-top: 70px;
 }
 .cert>.tiltcard1 {
-    width: 400px;
-    height: 200px;
+    border: gray 1px solid;
+    width: 300px;
+    height: 300px;
     background: transparent;
     margin: 0 20px;
     border-radius: 10px;
+    text-align: center;
 
 }
+.cert>.tiltcard1:hover {
+    box-shadow: 0 0 10px white, 0 0 5px white, 0 0 2px white;
+}
+
+
 
 .container5 {
     display: grid;
-    grid-template-columns: auto auto;
-    gap: 20px;
+    grid-template-columns: auto auto auto;
+    gap: 30px;
     justify-content: center;
     align-items: center;
     height: 100%;
@@ -661,14 +675,16 @@ text-decoration-color:  #AB11F2;
 .skills {
     background-color: transparent;
     border-radius: 5%;
-    border: 1px solid white;
+    border: 1px solid gray;
     height: 350px;
     width: 450px;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 5px white, 0 0 2px white, 0 0 1px white;
 
+}
+.skills:hover {
+    box-shadow: 0 0 10px white, 0 0 5px white, 0 0 2px white;
 }
 .tiltcard1{
     width: 420px;
@@ -715,12 +731,20 @@ text-decoration-color:  #AB11F2;
     font-size: 15px;
     text-align: center;
     margin: 15px;
+    transition: all 0.4s ease-in-out;
 }
 
 .tiltcard1>button:hover {
-    background-color: green;
-    color: white;
     transform: scale(1.1);
+    color: white;
+    background-color: transparent;
+    border: #2bcf15 2px solid;
+}
+.tiltcard1>button:active {
+    transform: scale(0.9);
+    color: white;
+    background-color: transparent;
+    border: #2bcf15 2px solid;
 }
 
 
