@@ -1008,10 +1008,10 @@ text-decoration-color:  #AB11F2;
 
 
 
-.work-section {
+/* .work-section { */
   /* background-color: var(--light);
   color: var(--dark); */
-  position: relative;
+  /* position: relative;
   margin: 0 auto;
 }
 .work-section h2 {
@@ -1188,9 +1188,9 @@ text-decoration-color:  #AB11F2;
 }
 .work-section .project .circle-dot {
   width: 15px;
-  height: 15px;
+  height: 15px; */
   /* background-color: var(--dark); */
-  background-color: var(--light);
+  /* background-color: var(--light);
   border: 3px solid #2694d4;
   position: absolute;
   border-radius: 50%;
@@ -1444,4 +1444,4 @@ text-decoration-color:  #AB11F2;
     font-size: 2em;
     margin-bottom: 1em;
   }
-}
+} */
