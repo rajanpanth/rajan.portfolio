@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-labelledby="title description">
+  <title id="title">NexCard project preview</title>
+  <description id="description">A virtual business card interface with QR sharing.</description>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111827"/>
+      <stop offset="1" stop-color="#312e81"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6366f1"/>
+      <stop offset="1" stop-color="#a855f7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="600" fill="url(#bg)"/>
+  <circle cx="1050" cy="90" r="220" fill="#8b5cf6" opacity=".12"/>
+  <circle cx="130" cy="560" r="260" fill="#3b82f6" opacity=".12"/>
+  <g transform="translate(124 112)">
+    <text x="0" y="72" fill="#fff" font-family="Arial, sans-serif" font-size="70" font-weight="700">NexCard</text>
+    <text x="2" y="125" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="28">Create. Customize. Share.</text>
+    <rect x="0" y="174" width="350" height="8" rx="4" fill="#818cf8"/>
+    <text x="2" y="240" fill="#94a3b8" font-family="Arial, sans-serif" font-size="22">Virtual business cards powered by</text>
+    <text x="2" y="276" fill="#94a3b8" font-family="Arial, sans-serif" font-size="22">React, Supabase, QR and vCard.</text>
+  </g>
+  <g transform="translate(660 95)">
+    <rect width="400" height="410" rx="34" fill="url(#card)"/>
+    <circle cx="78" cy="82" r="40" fill="#fff" opacity=".9"/>
+    <rect x="138" y="54" width="180" height="20" rx="10" fill="#fff" opacity=".92"/>
+    <rect x="138" y="90" width="115" height="13" rx="6" fill="#e0e7ff" opacity=".8"/>
+    <rect x="48" y="155" width="304" height="1" fill="#fff" opacity=".35"/>
+    <rect x="48" y="195" width="168" height="16" rx="8" fill="#fff" opacity=".88"/>
+    <rect x="48" y="230" width="230" height="12" rx="6" fill="#e0e7ff" opacity=".72"/>
+    <rect x="48" y="264" width="205" height="12" rx="6" fill="#e0e7ff" opacity=".72"/>
+    <g transform="translate(258 276)" fill="#fff">
+      <rect width="94" height="94" rx="8" opacity=".92"/>
+      <path d="M14 14h25v25H14zm41 0h25v25H55zM14 55h25v25H14zm46 5h20v20H60z" fill="#4338ca"/>
+    </g>
+  </g>
+</svg>

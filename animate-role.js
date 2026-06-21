@@ -2,7 +2,7 @@
 (function() {
     'use strict';
 
-    const roles = ['Developer', 'Designer', 'Security', 'WEB3 Enthusiast', 'Cloud', 'Viber'];
+    const roles = ['Full-Stack Developer', 'Web3 Developer', 'Security Enthusiast', 'Cloud Developer'];
     let currentIndex = 0;
 
     function replaceShitPoster() {
