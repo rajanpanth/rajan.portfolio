@@ -60,6 +60,8 @@ export default function GitHubActivity() {
             <img
               src="https://ghchart.rshah.org/rajanpanth"
               alt="Rajan's GitHub Contribution Graph"
+              loading="lazy"
+              decoding="async"
               className="w-full h-auto drop-shadow-[0_0_12px_rgba(34,197,94,0.1)]"
               style={{
                 imageRendering: "pixelated",

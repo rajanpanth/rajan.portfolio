@@ -1,6 +1,7 @@
 import { allProjects } from "@/data/projects";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { baseOpenGraph } from "@/lib/site";
 import { ExternalLink, Github, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
@@ -16,9 +17,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const project = allProjects.find((p) => p.slug === slug);
   if (!project) return {};
+  const url = `/developer/projects/${project.slug}`;
   return {
-    title: `${project.title} — Rajan Pantha`,
+    title: project.title,
     description: project.description,
+    alternates: { canonical: url },
+    openGraph: {
+      ...baseOpenGraph,
+      title: `${project.title} — Rajan Pantha`,
+      description: project.description,
+      url,
+    },
   };
 }
 
@@ -112,6 +121,7 @@ export default async function ProjectPage({ params }: Props) {
           <img
             src={project.image}
             alt={`${project.title} preview`}
+            decoding="async"
             className="w-full h-auto"
             style={{ maxHeight: "360px", objectFit: "cover", width: "100%" }}
           />

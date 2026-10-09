@@ -1,10 +1,11 @@
 import type { MetadataRoute } from "next";
 import { allProjects } from "@/data/projects";
+import { siteUrl } from "@/lib/site";
 
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://rajanpantha.dev";
+  const base = siteUrl;
 
   const projectPages = allProjects.map((p) => ({
     url: `${base}/developer/projects/${p.slug}`,

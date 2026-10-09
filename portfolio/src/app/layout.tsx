@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/layout/ThemeProvider";
 import { Instrument_Serif, JetBrains_Mono, Manrope } from "next/font/google";
+import { baseOpenGraph, ogImage, siteUrl } from "@/lib/site";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -26,7 +27,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://rajanpantha.dev"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Rajan Pantha- Fullstack & Web3 Engineer",
     template: "%s — Rajan Pantha",
@@ -46,13 +47,12 @@ export const metadata: Metadata = {
     "Nepal developer",
     "Superteam Nepal",
   ],
-  authors: [{ name: "Rajan Pantha", url: "https://rajanpantha.dev" }],
+  authors: [{ name: "Rajan Pantha", url: siteUrl }],
   creator: "Rajan Pantha",
+  alternates: { canonical: "/" },
   openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://rajanpantha.dev",
-    siteName: "Rajan Pantha",
+    ...baseOpenGraph,
+    url: siteUrl,
     title: "Rajan Pantha - Fullstack & Web3 Engineer",
     description:
       "Kathmandu-based fullstack and Web3 engineer building AI-agent infrastructure, non-custodial DeFi systems, and production Web3 products.",
@@ -63,6 +63,7 @@ export const metadata: Metadata = {
     description:
       "Kathmandu-based fullstack and Web3 engineer building AI-agent infrastructure, non-custodial DeFi systems, and production Web3 products.",
     creator: "@Rajan_panth",
+    images: [ogImage],
   },
   robots: {
     index: true,

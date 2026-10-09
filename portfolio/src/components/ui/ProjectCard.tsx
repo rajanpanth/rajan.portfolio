@@ -30,6 +30,8 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         <img
           src={project.image}
           alt={`${project.title} project preview`}
+          loading="lazy"
+          decoding="async"
           className={`h-full w-full transition-transform duration-500 group-hover:scale-[1.03] ${
             project.imageFit === "contain" ? "object-contain p-3" : "object-cover"
           }`}
