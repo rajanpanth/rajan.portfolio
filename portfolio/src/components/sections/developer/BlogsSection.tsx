@@ -5,10 +5,12 @@ import { blogPosts } from "@/data/blogs";
 
 interface BlogsSectionProps {
   showMoreLink?: boolean;
+  headingLevel?: "h1" | "h2";
 }
 
 export default function BlogsSection({
   showMoreLink = false,
+  headingLevel: Heading = "h2",
 }: BlogsSectionProps) {
   const displayedPosts = showMoreLink ? blogPosts.slice(0, 2) : blogPosts;
 
@@ -20,12 +22,12 @@ export default function BlogsSection({
       viewport={{ once: true, margin: "-50px" }}
     >
       <div className="flex items-baseline gap-3 mb-2">
-        <h2
+        <Heading
           className="font-serif italic text-3xl"
           style={{ color: "var(--foreground)" }}
         >
           Recommended Reading <span style={{ color: "var(--muted)" }}>#</span>
-        </h2>
+        </Heading>
       </div>
       <p
         className="mb-6"
@@ -72,6 +74,8 @@ export default function BlogsSection({
                 <img
                   src={post.image}
                   alt={post.title}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;

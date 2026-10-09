@@ -9,6 +9,8 @@ interface ProjectsSectionProps {
   showMoreLink?: boolean;
   moreHref?: string;
   moreLinkText?: string;
+  title?: string;
+  headingLevel?: "h1" | "h2";
 }
 
 export default function ProjectsSection({
@@ -16,6 +18,8 @@ export default function ProjectsSection({
   showMoreLink = false,
   moreHref = "/developer/projects",
   moreLinkText = "all projects",
+  title = "Flagship Projects",
+  headingLevel: Heading = "h2",
 }: ProjectsSectionProps) {
   return (
     <motion.section
@@ -24,12 +28,12 @@ export default function ProjectsSection({
       transition={{ duration: 0.5 }}
       viewport={{ once: true, margin: "-50px" }}
     >
-      <h2
+      <Heading
         className="font-serif italic text-3xl mb-6"
         style={{ color: "var(--foreground)" }}
       >
-        Flagship Projects <span style={{ color: "var(--muted)" }}>#</span>
-      </h2>
+        {title} <span style={{ color: "var(--muted)" }}>#</span>
+      </Heading>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {projects.map((project, index) => (
