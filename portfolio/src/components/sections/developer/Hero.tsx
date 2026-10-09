@@ -33,15 +33,11 @@ export default function Hero() {
           alt="Rajan Pantha"
           width={80}
           height={80}
-          className="rounded-lg object-cover flex-shrink-0"
-          style={{ width: '80px', height: '80px' }}
+          className="size-20 rounded-lg object-cover flex-shrink-0"
         />
         <div>
           <div className="flex items-center gap-2">
-            <h1
-              className="font-serif italic text-3xl font-normal"
-              style={{ color: 'var(--foreground)', lineHeight: 1.2 }}
-            >
+            <h1 className="font-serif italic text-3xl leading-[1.2] font-normal text-foreground">
               Rajan Pantha
             </h1>
             <svg viewBox="0 0 22 22" width="20" height="20" aria-hidden="true" className="flex-shrink-0">
@@ -49,7 +45,7 @@ export default function Hero() {
               <path d="M9.5 14.5L6.5 11.5L7.5 10.5L9.5 12.5L14.5 7.5L15.5 8.5L9.5 14.5Z" fill="white" />
             </svg>
           </div>
-          <p style={{ color: 'var(--muted)', fontFamily: "var(--font-mono), monospace", fontSize: '13px' }}>
+          <p className="font-mono text-[13px] text-muted">
             Fullstack &amp; Web3 Engineer · Kathmandu, NP
           </p>
         </div>
@@ -60,12 +56,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.5 }}
-        className="mb-3 leading-snug font-serif italic"
-        style={{
-          fontSize: '20px',
-          color: 'var(--foreground)',
-          maxWidth: '520px',
-        }}
+        className="mb-3 max-w-[520px] font-serif italic text-[20px] leading-snug text-foreground"
       >
         I build AI-native products on Solana.
       </motion.p>
@@ -75,18 +66,12 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.5 }}
-        className="mb-6 leading-relaxed"
-        style={{
-          fontFamily: "var(--font-sans), sans-serif",
-          fontSize: '15px',
-          color: 'var(--muted)',
-          maxWidth: '520px',
-        }}
+        className="mb-6 max-w-[520px] font-sans text-[15px] leading-relaxed text-muted"
       >
         Full-stack and smart-contract engineer building{' '}
-        <span style={{ color: 'var(--foreground)', fontWeight: 500 }}>non-custodial DeFi systems</span>,{' '}
-        <span style={{ color: 'var(--foreground)', fontWeight: 500 }}>autonomous-agent infrastructure</span>, and{' '}
-        <span style={{ color: 'var(--foreground)', fontWeight: 500 }}>production Web3 products</span>.
+        <span className="font-medium text-foreground">non-custodial DeFi systems</span>,{' '}
+        <span className="font-medium text-foreground">autonomous-agent infrastructure</span>, and{' '}
+        <span className="font-medium text-foreground">production Web3 products</span>.
       </motion.p>
 
       {/* Currently building indicator */}
@@ -97,21 +82,16 @@ export default function Hero() {
         className="mb-7 flex items-center gap-2.5"
       >
         <span
-          className="inline-block w-2 h-2 rounded-full flex-shrink-0"
-          style={{ backgroundColor: '#22c55e', boxShadow: '0 0 6px #22c55e80' }}
+          className="inline-block w-2 h-2 rounded-full flex-shrink-0 bg-[#22c55e] shadow-[0_0_6px_#22c55e80]"
           aria-hidden="true"
         />
-        <span style={{
-          fontFamily: "var(--font-sans), sans-serif",
-          fontSize: '13px',
-          color: 'var(--muted)',
-        }}>
+        <span className="font-sans text-[13px] text-muted">
           Currently building{' '}
           <a
             href="https://github.com/rajanpanth/Fornex"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ color: 'var(--foreground)', fontWeight: 500, textDecoration: 'underline', textUnderlineOffset: '3px' }}
+            className="font-medium text-foreground underline underline-offset-[3px]"
           >
             Fornex
           </a>
@@ -128,8 +108,7 @@ export default function Hero() {
       >
         <a
           href="#projects"
-          className="inline-flex items-center gap-1.5 rounded-md px-3.5 py-2 text-xs font-semibold transition-opacity hover:opacity-80"
-          style={{ backgroundColor: 'var(--foreground)', color: 'var(--background)', fontFamily: "var(--font-sans), sans-serif" }}
+          className="inline-flex items-center gap-1.5 rounded-md bg-foreground px-3.5 py-2 font-sans text-xs font-semibold text-background transition-opacity hover:opacity-80"
         >
           Explore flagship projects
         </a>
@@ -137,15 +116,13 @@ export default function Hero() {
           href="https://github.com/rajanpanth"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 rounded-md border px-3.5 py-2 text-xs font-semibold transition-opacity hover:opacity-80"
-          style={{ borderColor: 'var(--border)', color: 'var(--foreground)', fontFamily: "var(--font-sans), sans-serif" }}
+          className="inline-flex items-center gap-1.5 rounded-md border border-border px-3.5 py-2 font-sans text-xs font-semibold text-foreground transition-opacity hover:opacity-80"
         >
           View GitHub
         </a>
         <a
           href="mailto:pantharajan0@gmail.com"
-          className="inline-flex items-center gap-1.5 rounded-md border px-3.5 py-2 text-xs font-semibold transition-opacity hover:opacity-80"
-          style={{ borderColor: 'var(--border)', color: 'var(--muted)', fontFamily: "var(--font-sans), sans-serif" }}
+          className="inline-flex items-center gap-1.5 rounded-md border border-border px-3.5 py-2 font-sans text-xs font-semibold text-muted transition-opacity hover:opacity-80"
         >
           Let&apos;s build something
         </a>
@@ -166,8 +143,7 @@ export default function Hero() {
               href={link.href}
               target={link.href.startsWith('mailto') ? undefined : '_blank'}
               rel={link.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
-              className="transition-opacity hover:opacity-70"
-              style={{ color: 'var(--muted)' }}
+              className="text-muted transition-opacity hover:opacity-70"
               aria-label={link.label}
             >
               {typeof IconComponent === 'function' && !('render' in IconComponent) ? (

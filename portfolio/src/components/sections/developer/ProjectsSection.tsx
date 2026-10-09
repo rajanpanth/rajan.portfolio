@@ -28,11 +28,8 @@ export default function ProjectsSection({
       transition={{ duration: 0.5 }}
       viewport={{ once: true, margin: "-50px" }}
     >
-      <Heading
-        className="font-serif italic text-3xl mb-6"
-        style={{ color: "var(--foreground)" }}
-      >
-        {title} <span style={{ color: "var(--muted)" }}>#</span>
+      <Heading className="font-serif italic text-3xl mb-6 text-foreground">
+        {title} <span className="text-muted">#</span>
       </Heading>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -47,13 +44,7 @@ export default function ProjectsSection({
             href={moreHref}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-block rounded-full border px-5 py-2 text-sm transition-colors duration-200"
-            style={{
-              borderColor: "var(--border)",
-              color: "var(--muted)",
-              fontFamily: "var(--font-mono), monospace",
-              fontSize: "13px",
-            }}
+            className="inline-block rounded-full border border-border px-5 py-2 font-mono text-[13px] leading-[calc(1.25/0.875)] text-muted transition-colors duration-200"
           >
             {moreLinkText}
           </motion.a>
@@ -62,4 +53,3 @@ export default function ProjectsSection({
     </motion.section>
   );
 }
-

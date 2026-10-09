@@ -28,32 +28,15 @@ function AchievementCard({ item, index }: { item: Achievement; index: number }) 
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: index * 0.07 }}
       viewport={{ once: true }}
-      className="rounded-lg border p-4"
-      style={{
-        borderColor: "var(--border)",
-        backgroundColor: "var(--card)",
-      }}
+      className="rounded-lg border border-border bg-card p-4"
     >
       <div className="mb-1.5 flex flex-wrap items-start justify-between gap-3">
         <div className="flex flex-wrap items-center gap-2">
-          <span
-            className="rounded px-2 py-0.5 text-[10px] font-medium"
-            style={{
-              backgroundColor: "var(--card-hover)",
-              color: "var(--muted)",
-              fontFamily: "var(--font-mono), monospace",
-            }}
-          >
+          <span className="rounded bg-card-hover px-2 py-0.5 font-mono text-[10px] font-medium text-muted">
             {categoryLabel[item.category]}
           </span>
           {item.year && (
-            <span
-              style={{
-                fontFamily: "var(--font-mono), monospace",
-                fontSize: "11px",
-                color: "var(--muted)",
-              }}
-            >
+            <span className="font-mono text-[11px] text-muted">
               {item.year}
             </span>
           )}
@@ -65,37 +48,18 @@ function AchievementCard({ item, index }: { item: Achievement; index: number }) 
           href={item.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="mb-1 block font-medium transition-opacity hover:opacity-70"
-          style={{
-            fontFamily: "var(--font-sans), sans-serif",
-            fontSize: "15px",
-            color: "var(--foreground)",
-          }}
+          className="mb-1 block font-sans text-[15px] font-medium text-foreground transition-opacity hover:opacity-70"
         >
           {item.title} ↗
         </a>
       ) : (
-        <p
-          className="mb-1 font-medium"
-          style={{
-            fontFamily: "var(--font-sans), sans-serif",
-            fontSize: "15px",
-            color: "var(--foreground)",
-          }}
-        >
+        <p className="mb-1 font-sans text-[15px] font-medium text-foreground">
           {item.title}
         </p>
       )}
 
       {item.description && (
-        <p
-          className="leading-relaxed"
-          style={{
-            fontFamily: "var(--font-sans), sans-serif",
-            fontSize: "14px",
-            color: "var(--muted)",
-          }}
-        >
+        <p className="font-sans text-[14px] leading-relaxed text-muted">
           {item.description}
         </p>
       )}
@@ -113,11 +77,8 @@ export default function Achievements() {
       transition={{ duration: 0.5 }}
       viewport={{ once: true, margin: "-50px" }}
     >
-      <h2
-        className="mb-6 font-serif text-3xl italic"
-        style={{ color: "var(--foreground)" }}
-      >
-        Proof of Work <span style={{ color: "var(--muted)" }}>#</span>
+      <h2 className="mb-6 font-serif text-3xl italic text-foreground">
+        Proof of Work <span className="text-muted">#</span>
       </h2>
 
       <div className="space-y-3">
@@ -126,22 +87,11 @@ export default function Achievements() {
           onClick={() => setProjectsOpen((open) => !open)}
           aria-expanded={projectsOpen}
           aria-controls="project-proof-list"
-          className="flex w-full items-center justify-between gap-4 rounded-lg border p-4 text-left transition-colors"
-          style={{
-            borderColor: "var(--border)",
-            backgroundColor: "var(--card)",
-            color: "var(--foreground)",
-          }}
+          className="flex w-full items-center justify-between gap-4 rounded-lg border border-border bg-card p-4 text-left text-foreground transition-colors"
         >
           <div>
             <p className="font-medium">Project Proof</p>
-            <p
-              className="mt-1 text-xs"
-              style={{
-                color: "var(--muted)",
-                fontFamily: "var(--font-mono), monospace",
-              }}
-            >
+            <p className="mt-1 font-mono text-xs text-muted">
               {projectAchievements.length} projects — click to {projectsOpen ? "hide" : "view"}
             </p>
           </div>

@@ -37,18 +37,20 @@ export default async function ProjectPage({ params }: Props) {
   if (!project) notFound();
 
   const hasDetail = project.problem || project.solution || project.architecture;
+  const caseStudy = [
+    { heading: "Problem", body: project.problem },
+    { heading: "Solution", body: project.solution },
+    { heading: "Technical Architecture", body: project.architecture },
+    { heading: "Lessons Learned", body: project.lessonsLearned },
+    { heading: "Next Milestones", body: project.nextMilestones },
+  ].filter((section) => section.body);
 
   return (
     <article className="py-10 pb-16">
       {/* Back */}
       <Link
         href="/developer/projects"
-        className="inline-flex items-center gap-1.5 mb-8 transition-opacity hover:opacity-70"
-        style={{
-          fontFamily: "var(--font-mono), monospace",
-          fontSize: "12px",
-          color: "var(--muted)",
-        }}
+        className="inline-flex items-center gap-1.5 mb-8 font-mono text-[12px] text-muted transition-opacity hover:opacity-70"
       >
         <ArrowLeft size={13} />
         All projects
@@ -57,95 +59,52 @@ export default async function ProjectPage({ params }: Props) {
       {/* Header */}
       <header className="mb-8">
         <div className="flex items-center gap-3 mb-3 flex-wrap">
-          <h1
-            className="font-serif italic text-3xl font-normal"
-            style={{ color: "var(--foreground)" }}
-          >
+          <h1 className="font-serif italic text-3xl font-normal text-foreground">
             {project.title}
           </h1>
-          <span
-            className="rounded px-2.5 py-0.5 text-[11px] font-medium"
-            style={{
-              backgroundColor: "var(--card-hover)",
-              color: "var(--muted)",
-              fontFamily: "var(--font-mono), monospace",
-            }}
-          >
+          <span className="rounded bg-card-hover px-2.5 py-0.5 font-mono text-[11px] font-medium text-muted">
             {project.status}
           </span>
         </div>
 
-        <p
-          className="mb-4 leading-relaxed"
-          style={{
-            fontFamily: "var(--font-sans), sans-serif",
-            fontSize: "15px",
-            color: "var(--muted)",
-            maxWidth: "560px",
-          }}
-        >
+        <p className="mb-4 max-w-[560px] font-sans text-[15px] leading-relaxed text-muted">
           {project.description}
         </p>
 
         {project.role && (
-          <p
-            style={{
-              fontFamily: "var(--font-mono), monospace",
-              fontSize: "12px",
-              color: "var(--muted)",
-            }}
-          >
-            <span style={{ color: "var(--foreground)" }}>Role: </span>
+          <p className="font-mono text-[12px] text-muted">
+            <span className="text-foreground">Role: </span>
             {project.role}
           </p>
         )}
 
-        <p
-          className="mt-1"
-          style={{
-            fontFamily: "var(--font-mono), monospace",
-            fontSize: "12px",
-            color: "var(--muted)",
-          }}
-        >
+        <p className="mt-1 font-mono text-[12px] text-muted">
           {project.period}
         </p>
       </header>
 
       {/* Project image */}
       {project.image && (
-        <div
-          className="rounded-lg overflow-hidden border mb-8"
-          style={{ borderColor: "var(--border)", backgroundColor: "#05070a" }}
-        >
+        <div className="rounded-lg overflow-hidden border border-border bg-[#05070a] mb-8">
           <img
             src={project.image}
             alt={`${project.title} preview`}
             decoding="async"
-            className="w-full h-auto"
-            style={{ maxHeight: "360px", objectFit: "cover", width: "100%" }}
+            className="w-full h-auto max-h-[360px] object-cover"
           />
         </div>
       )}
 
       {/* Tech stack */}
       <div className="mb-8">
-        <h2
-          className="font-serif italic text-xl mb-3"
-          style={{ color: "var(--foreground)" }}
-        >
+        <h2 className="font-serif italic text-xl mb-3 text-foreground">
           Stack
         </h2>
         <div className="flex flex-wrap gap-2">
           {project.techStack.map((tech) => (
             <span
               key={tech}
-              className="rounded px-2.5 py-1 text-xs"
-              style={{
-                backgroundColor: "var(--card-hover)",
-                color: "var(--muted)",
-                fontFamily: "var(--font-mono), monospace",
-              }}
+              className="rounded bg-card-hover px-2.5 py-1 font-mono text-xs text-muted"
             >
               {tech}
             </span>
@@ -156,115 +115,16 @@ export default async function ProjectPage({ params }: Props) {
       {/* Case study content */}
       {hasDetail && (
         <div className="space-y-8">
-          {project.problem && (
-            <section>
-              <h2
-                className="font-serif italic text-xl mb-3"
-                style={{ color: "var(--foreground)" }}
-              >
-                Problem
+          {caseStudy.map((section) => (
+            <section key={section.heading}>
+              <h2 className="font-serif italic text-xl mb-3 text-foreground">
+                {section.heading}
               </h2>
-              <p
-                className="leading-relaxed"
-                style={{
-                  fontFamily: "var(--font-sans), sans-serif",
-                  fontSize: "15px",
-                  color: "var(--muted)",
-                  maxWidth: "580px",
-                }}
-              >
-                {project.problem}
+              <p className="max-w-[580px] font-sans text-[15px] leading-relaxed text-muted">
+                {section.body}
               </p>
             </section>
-          )}
-
-          {project.solution && (
-            <section>
-              <h2
-                className="font-serif italic text-xl mb-3"
-                style={{ color: "var(--foreground)" }}
-              >
-                Solution
-              </h2>
-              <p
-                className="leading-relaxed"
-                style={{
-                  fontFamily: "var(--font-sans), sans-serif",
-                  fontSize: "15px",
-                  color: "var(--muted)",
-                  maxWidth: "580px",
-                }}
-              >
-                {project.solution}
-              </p>
-            </section>
-          )}
-
-          {project.architecture && (
-            <section>
-              <h2
-                className="font-serif italic text-xl mb-3"
-                style={{ color: "var(--foreground)" }}
-              >
-                Technical Architecture
-              </h2>
-              <p
-                className="leading-relaxed"
-                style={{
-                  fontFamily: "var(--font-sans), sans-serif",
-                  fontSize: "15px",
-                  color: "var(--muted)",
-                  maxWidth: "580px",
-                }}
-              >
-                {project.architecture}
-              </p>
-            </section>
-          )}
-
-          {project.lessonsLearned && (
-            <section>
-              <h2
-                className="font-serif italic text-xl mb-3"
-                style={{ color: "var(--foreground)" }}
-              >
-                Lessons Learned
-              </h2>
-              <p
-                className="leading-relaxed"
-                style={{
-                  fontFamily: "var(--font-sans), sans-serif",
-                  fontSize: "15px",
-                  color: "var(--muted)",
-                  maxWidth: "580px",
-                }}
-              >
-                {project.lessonsLearned}
-              </p>
-            </section>
-          )}
-
-          {project.nextMilestones && (
-            <section>
-              <h2
-                className="font-serif italic text-xl mb-3"
-                style={{ color: "var(--foreground)" }}
-              >
-                Next Milestones
-              </h2>
-              <p
-                className="leading-relaxed"
-                style={{
-                  fontFamily: "var(--font-sans), sans-serif",
-                  fontSize: "15px",
-                  color: "var(--muted)",
-                  maxWidth: "580px",
-                }}
-              >
-                {project.nextMilestones}
-              </p>
-            </section>
-          )}
+          ))}
         </div>
       )}
 
@@ -275,12 +135,7 @@ export default async function ProjectPage({ params }: Props) {
             href={project.live}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-md px-4 py-2 text-xs font-semibold transition-opacity hover:opacity-80"
-            style={{
-              backgroundColor: "var(--foreground)",
-              color: "var(--background)",
-              fontFamily: "var(--font-sans), sans-serif",
-            }}
+            className="inline-flex items-center gap-1.5 rounded-md bg-foreground px-4 py-2 font-sans text-xs font-semibold text-background transition-opacity hover:opacity-80"
           >
             <ExternalLink size={13} aria-hidden="true" />
             Live site
@@ -291,12 +146,7 @@ export default async function ProjectPage({ params }: Props) {
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-md border px-4 py-2 text-xs font-semibold transition-opacity hover:opacity-80"
-            style={{
-              borderColor: "var(--border)",
-              color: "var(--foreground)",
-              fontFamily: "var(--font-sans), sans-serif",
-            }}
+            className="inline-flex items-center gap-1.5 rounded-md border border-border px-4 py-2 font-sans text-xs font-semibold text-foreground transition-opacity hover:opacity-80"
           >
             <Github size={13} aria-hidden="true" />
             Source code

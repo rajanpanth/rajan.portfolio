@@ -43,32 +43,13 @@ export default function ContactSection() {
       viewport={{ once: true, margin: "-50px" }}
       id="contact"
     >
-      <h2
-        className="font-serif italic text-3xl mb-3"
-        style={{ color: "var(--foreground)" }}
-      >
-        Let&apos;s build something <span style={{ color: "var(--muted)" }}>#</span>
+      <h2 className="font-serif italic text-3xl mb-3 text-foreground">
+        Let&apos;s build something <span className="text-muted">#</span>
       </h2>
-      <p
-        className="mb-2 leading-relaxed"
-        style={{
-          fontFamily: "var(--font-sans), sans-serif",
-          fontSize: "15px",
-          color: "var(--foreground)",
-          maxWidth: "480px",
-        }}
-      >
+      <p className="mb-2 max-w-[480px] font-sans text-[15px] leading-relaxed text-foreground">
         Want to build something on-chain?
       </p>
-      <p
-        className="mb-7 leading-relaxed"
-        style={{
-          fontFamily: "var(--font-sans), sans-serif",
-          fontSize: "15px",
-          color: "var(--muted)",
-          maxWidth: "480px",
-        }}
-      >
+      <p className="mb-7 max-w-[480px] font-sans text-[15px] leading-relaxed text-muted">
         I&apos;m open to collaborating on Solana products, AI-agent infrastructure,
         and early-stage Web3 systems.
       </p>
@@ -82,20 +63,11 @@ export default function ContactSection() {
               href={link.href}
               target={link.href.startsWith("mailto") ? undefined : "_blank"}
               rel={link.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
-              className="inline-flex items-center gap-2 rounded-md px-4 py-2 text-xs font-semibold transition-opacity hover:opacity-80"
-              style={
+              className={`inline-flex items-center gap-2 rounded-md px-4 py-2 font-sans text-xs font-semibold transition-opacity hover:opacity-80 ${
                 link.primary
-                  ? {
-                      backgroundColor: "var(--foreground)",
-                      color: "var(--background)",
-                      fontFamily: "var(--font-sans), sans-serif",
-                    }
-                  : {
-                      border: "1px solid var(--border)",
-                      color: "var(--foreground)",
-                      fontFamily: "var(--font-sans), sans-serif",
-                    }
-              }
+                  ? "bg-foreground text-background"
+                  : "border border-border text-foreground"
+              }`}
             >
               {typeof IconComponent === "function" && !("render" in IconComponent) ? (
                 <IconComponent />

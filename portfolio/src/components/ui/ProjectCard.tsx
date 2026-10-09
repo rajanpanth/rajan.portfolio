@@ -17,16 +17,9 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       transition={{ duration: 0.45, delay: index * 0.06 }}
       viewport={{ once: true, margin: "-40px" }}
       whileHover={{ y: -4 }}
-      className="group flex h-full flex-col overflow-hidden rounded-xl border"
-      style={{
-        borderColor: "var(--border)",
-        backgroundColor: "var(--card)",
-      }}
+      className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card"
     >
-      <div
-        className="h-44 w-full overflow-hidden border-b sm:h-48"
-        style={{ borderColor: "var(--border)", backgroundColor: "#05070a" }}
-      >
+      <div className="h-44 w-full overflow-hidden border-b border-border bg-[#05070a] sm:h-48">
         <img
           src={project.image}
           alt={`${project.title} project preview`}
@@ -40,35 +33,19 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
 
       <div className="flex flex-1 flex-col p-4">
         <div className="mb-2 flex items-center justify-between gap-3">
-          <h3
-            className="text-lg font-semibold"
-            style={{ color: "var(--foreground)" }}
-          >
+          <h3 className="text-lg font-semibold text-foreground">
             {project.title}
           </h3>
-          <span
-            className="rounded px-2 py-1 text-[10px] font-semibold whitespace-nowrap"
-            style={{
-              color: "var(--muted)",
-              backgroundColor: "var(--card-hover)",
-              fontFamily: "var(--font-mono), monospace",
-            }}
-          >
+          <span className="rounded bg-card-hover px-2 py-1 font-mono text-[10px] font-semibold whitespace-nowrap text-muted">
             {project.status}
           </span>
         </div>
 
-        <p
-          className="mb-3 text-sm"
-          style={{ color: "var(--muted)", fontFamily: "var(--font-mono), monospace", fontSize: "11px" }}
-        >
+        <p className="mb-3 font-mono text-[11px] leading-[calc(1.25/0.875)] text-muted">
           {project.period}
         </p>
 
-        <p
-          className="mb-4 text-sm leading-relaxed"
-          style={{ color: "var(--muted)" }}
-        >
+        <p className="mb-4 text-sm leading-relaxed text-muted">
           {project.description}
         </p>
 
@@ -76,12 +53,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           {project.techStack.map((tech) => (
             <span
               key={tech}
-              className="rounded px-2 py-1 text-[10px]"
-              style={{
-                color: "var(--muted)",
-                backgroundColor: "var(--card-hover)",
-                fontFamily: "var(--font-mono), monospace",
-              }}
+              className="rounded bg-card-hover px-2 py-1 font-mono text-[10px] text-muted"
             >
               {tech}
             </span>
@@ -94,11 +66,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               href={project.live}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-md px-3 py-2 text-xs font-semibold transition-opacity hover:opacity-80"
-              style={{
-                backgroundColor: "var(--foreground)",
-                color: "var(--background)",
-              }}
+              className="inline-flex items-center gap-1.5 rounded-md bg-foreground px-3 py-2 text-xs font-semibold text-background transition-opacity hover:opacity-80"
             >
               <ExternalLink size={13} aria-hidden="true" />
               Live
@@ -109,12 +77,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-md border px-3 py-2 text-xs font-semibold transition-opacity hover:opacity-80"
-              style={{
-                borderColor: "var(--border)",
-                color: "var(--foreground)",
-                backgroundColor: "transparent",
-              }}
+              className="inline-flex items-center gap-1.5 rounded-md border border-border bg-transparent px-3 py-2 text-xs font-semibold text-foreground transition-opacity hover:opacity-80"
             >
               <Github size={13} aria-hidden="true" />
               Source
@@ -123,13 +86,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           {project.problem && (
             <a
               href={`/developer/projects/${project.slug}`}
-              className="inline-flex items-center gap-1.5 rounded-md border px-3 py-2 text-xs font-semibold transition-opacity hover:opacity-80"
-              style={{
-                borderColor: "var(--border)",
-                color: "var(--muted)",
-                backgroundColor: "transparent",
-                fontFamily: "var(--font-mono), monospace",
-              }}
+              className="inline-flex items-center gap-1.5 rounded-md border border-border bg-transparent px-3 py-2 font-mono text-xs font-semibold text-muted transition-opacity hover:opacity-80"
             >
               Case study →
             </a>

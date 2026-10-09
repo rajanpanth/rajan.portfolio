@@ -14,15 +14,13 @@ export default function Navbar() {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="sticky top-0 z-50 backdrop-blur-md"
-      style={{ backgroundColor: 'var(--nav-bg)' }}
+      className="sticky top-0 z-50 backdrop-blur-md bg-nav"
     >
       <div className="max-w-[700px] mx-auto px-3 sm:px-4 py-3 flex items-center justify-between">
         {/* Brand */}
         <Link
           href="/"
-          className="font-serif italic text-xl font-medium transition-opacity hover:opacity-70 mr-2 sm:mr-6 flex-shrink-0"
-          style={{ color: 'var(--foreground)' }}
+          className="font-serif italic text-xl font-medium text-foreground transition-opacity hover:opacity-70 mr-2 sm:mr-6 flex-shrink-0"
           aria-label="Rajan Pantha — home"
         >
           Rajan
@@ -41,13 +39,9 @@ export default function Navbar() {
                 // The brand already links home, so the "home" item is dropped on phones to fit
                 className={`${
                   link.href === '/' ? 'hidden sm:inline-flex' : 'inline-flex'
-                } items-center px-1.5 sm:px-2 py-1 rounded text-xs sm:text-[13px] transition-colors duration-200 hover:opacity-70`}
-                style={{
-                  color: isActive ? 'var(--foreground)' : 'var(--muted)',
-                  fontFamily: "var(--font-mono), monospace",
-                  fontWeight: isActive ? 600 : 400,
-                  minHeight: '44px',
-                }}
+                } ${
+                  isActive ? 'text-foreground font-semibold' : 'text-muted font-normal'
+                } items-center min-h-[44px] px-1.5 sm:px-2 py-1 rounded font-mono text-xs sm:text-[13px] transition-colors duration-200 hover:opacity-70`}
                 aria-current={isActive ? 'page' : undefined}
               >
                 {link.label}
