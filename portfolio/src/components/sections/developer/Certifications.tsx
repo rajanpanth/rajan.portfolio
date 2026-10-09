@@ -37,53 +37,24 @@ export default function Certifications() {
       transition={{ duration: 0.5 }}
       viewport={{ once: true, margin: "-50px" }}
     >
-      <h2
-        className="font-serif italic text-3xl mb-6"
-        style={{ color: "var(--foreground)" }}
-      >
-        Certifications <span style={{ color: "var(--muted)" }}>#</span>
+      <h2 className="font-serif italic text-3xl mb-6 text-foreground">
+        Certifications <span className="text-muted">#</span>
       </h2>
       <div className="space-y-3">
         {certifications.map((cert) => (
           <div
             key={cert.title}
-            className="rounded-lg border p-4"
-            style={{
-              borderColor: "var(--border)",
-              backgroundColor: "var(--card)",
-            }}
+            className="rounded-lg border border-border bg-card p-4"
           >
             <div className="flex items-center gap-2 mb-1 flex-wrap">
-              <h3
-                className="font-medium"
-                style={{
-                  fontFamily: "var(--font-sans), sans-serif",
-                  fontSize: "15px",
-                  color: "var(--foreground)",
-                }}
-              >
+              <h3 className="font-sans text-[15px] font-medium text-foreground">
                 {cert.title}
               </h3>
-              <span
-                className="text-xs px-2 py-0.5 rounded"
-                style={{
-                  backgroundColor: "var(--card-hover)",
-                  color: "var(--muted)",
-                  fontFamily: "var(--font-mono), monospace",
-                  fontSize: "11px",
-                }}
-              >
+              <span className="px-2 py-0.5 rounded bg-card-hover font-mono text-[11px] leading-[calc(1/0.75)] text-muted">
                 {cert.issuer}
               </span>
             </div>
-            <p
-              className="leading-relaxed"
-              style={{
-                fontFamily: "var(--font-sans), sans-serif",
-                fontSize: "14px",
-                color: "var(--muted)",
-              }}
-            >
+            <p className="font-sans text-[14px] leading-relaxed text-muted">
               {cert.description}
             </p>
             {cert.credentialUrl && (
@@ -91,11 +62,7 @@ export default function Certifications() {
                 href={cert.credentialUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-3 inline-flex items-center gap-1.5 text-xs transition-opacity hover:opacity-70"
-                style={{
-                  color: "var(--foreground)",
-                  fontFamily: "var(--font-mono), monospace",
-                }}
+                className="mt-3 inline-flex items-center gap-1.5 font-mono text-xs text-foreground transition-opacity hover:opacity-70"
                 aria-label={`View ${cert.title} credential`}
               >
                 View credential

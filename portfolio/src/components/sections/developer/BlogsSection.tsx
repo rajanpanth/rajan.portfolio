@@ -22,21 +22,11 @@ export default function BlogsSection({
       viewport={{ once: true, margin: "-50px" }}
     >
       <div className="flex items-baseline gap-3 mb-2">
-        <Heading
-          className="font-serif italic text-3xl"
-          style={{ color: "var(--foreground)" }}
-        >
-          Recommended Reading <span style={{ color: "var(--muted)" }}>#</span>
+        <Heading className="font-serif italic text-3xl text-foreground">
+          Recommended Reading <span className="text-muted">#</span>
         </Heading>
       </div>
-      <p
-        className="mb-6"
-        style={{
-          fontFamily: "var(--font-sans), sans-serif",
-          fontSize: "14px",
-          color: "var(--muted)",
-        }}
-      >
+      <p className="mb-6 font-sans text-[14px] text-muted">
         Curated articles on topics I find relevant — not necessarily written by me.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -48,28 +38,14 @@ export default function BlogsSection({
             rel="noopener noreferrer"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="rounded-lg border overflow-hidden cursor-pointer transition-colors duration-200 block"
-            style={{
-              borderColor: "var(--border)",
-              backgroundColor: "var(--card)",
-            }}
+            className="rounded-lg border border-border bg-card overflow-hidden cursor-pointer transition-colors duration-200 block"
           >
             <div className="p-4">
-              <h3
-                className="font-medium leading-snug"
-                style={{
-                  fontFamily: "var(--font-sans), sans-serif",
-                  fontSize: "15px",
-                  color: "var(--foreground)",
-                }}
-              >
+              <h3 className="font-sans text-[15px] font-medium leading-snug text-foreground">
                 {post.title}
               </h3>
             </div>
-            <div
-              className="w-full h-40 overflow-hidden flex items-center justify-center"
-              style={{ backgroundColor: "var(--card-hover)" }}
-            >
+            <div className="w-full h-40 overflow-hidden flex items-center justify-center bg-card-hover">
               {post.image ? (
                 <img
                   src={post.image}
@@ -83,13 +59,7 @@ export default function BlogsSection({
                   }}
                 />
               ) : (
-                <span
-                  style={{
-                    color: "var(--muted)",
-                    fontFamily: "var(--font-mono), monospace",
-                    fontSize: "14px",
-                  }}
-                >
+                <span className="font-mono text-[14px] text-muted">
                   Medium ↗
                 </span>
               )}
@@ -103,13 +73,7 @@ export default function BlogsSection({
             href="/developer/blogs"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-block px-5 py-2 rounded-full border text-sm transition-colors duration-200"
-            style={{
-              borderColor: "var(--border)",
-              color: "var(--muted)",
-              fontFamily: "var(--font-mono), monospace",
-              fontSize: "13px",
-            }}
+            className="inline-block px-5 py-2 rounded-full border border-border font-mono text-[13px] leading-[calc(1.25/0.875)] text-muted transition-colors duration-200"
           >
             all articles
           </motion.a>

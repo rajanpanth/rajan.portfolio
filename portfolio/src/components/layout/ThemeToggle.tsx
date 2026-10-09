@@ -20,8 +20,7 @@ export default function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <div className="flex flex-shrink-0 items-center gap-1 rounded-full border px-1 py-1"
-        style={{ borderColor: 'var(--border)' }}>
+      <div className="flex flex-shrink-0 items-center gap-1 rounded-full border border-border px-1 py-1">
         <div className="w-7 h-7" />
         <div className="hidden sm:block w-7 h-7" />
         <div className="hidden sm:block w-7 h-7" />
@@ -40,14 +39,10 @@ export default function ThemeToggle() {
   return (
     <>
       {/* Phones: one button that cycles through the themes */}
-      <div
-        className="flex sm:hidden flex-shrink-0 items-center rounded-full border px-1 py-1"
-        style={{ borderColor: 'var(--border)' }}
-      >
+      <div className="flex sm:hidden flex-shrink-0 items-center rounded-full border border-border px-1 py-1">
         <button
           onClick={() => setTheme(next.value)}
-          className="rounded-full p-1.5 transition-all duration-200 cursor-pointer"
-          style={{ color: 'var(--foreground)' }}
+          className="rounded-full p-1.5 text-foreground transition-all duration-200 cursor-pointer"
           aria-label={`Theme: ${current.label}. Switch to ${next.label}`}
           title={`Theme: ${current.label}`}
         >
@@ -55,19 +50,14 @@ export default function ThemeToggle() {
         </button>
       </div>
 
-      <div
-        className="hidden sm:flex flex-shrink-0 items-center gap-0.5 rounded-full border px-1 py-1"
-        style={{ borderColor: 'var(--border)' }}
-      >
+      <div className="hidden sm:flex flex-shrink-0 items-center gap-0.5 rounded-full border border-border px-1 py-1">
         {buttons.map(({ value, icon: Icon, label }) => (
           <button
             key={value}
             onClick={() => setTheme(value)}
-            className="relative rounded-full p-1.5 transition-all duration-200 cursor-pointer"
-            style={{
-              backgroundColor: theme === value ? 'var(--card-hover)' : 'transparent',
-              color: theme === value ? 'var(--foreground)' : 'var(--muted)',
-            }}
+            className={`relative rounded-full p-1.5 transition-all duration-200 cursor-pointer ${
+              theme === value ? 'bg-card-hover text-foreground' : 'bg-transparent text-muted'
+            }`}
             aria-label={label}
             title={label}
           >

@@ -22,10 +22,10 @@ export default function GitHubActivity() {
       className="w-full sm:mt-24 mt-16 mb-20"
     >
       <div className="flex items-end gap-3 mb-8 px-2">
-        <h2 className="font-serif italic text-3xl" style={{ color: 'var(--foreground)' }}>
+        <h2 className="font-serif italic text-3xl text-foreground">
           GitHub Contributions
         </h2>
-        <span style={{ color: 'var(--muted)' }} className="font-light text-2xl">#</span>
+        <span className="font-light text-2xl text-muted">#</span>
       </div>
       
       <div className="relative group rounded-3xl border border-zinc-800/60 bg-[#0a0a0a] p-4 sm:p-8 overflow-hidden hover:border-zinc-700/80 transition-all duration-500 shadow-2xl shadow-green-900/5 ring-1 ring-white/5">
